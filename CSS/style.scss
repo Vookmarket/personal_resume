@@ -6,12 +6,10 @@
 }
 
 /*配色*/
-$background: #faeee7;//背景色１
-$headline: #33272a;//見出し色
-$paragraph: #594a4e;//段落色
-$main: #fffffe;//メインカラー
-$highlight: #ff8ba7;//アクセントカラー
-$secondary: #c6fdff;//セカンダリカラー
+$main :#7e6752;
+$first :#aed09e;
+$second: #61b292;
+$base:#f4eec0;
 
 /*********************mixin*********************/
 /***********フォント・文字***********/
@@ -54,11 +52,11 @@ $secondary: #c6fdff;//セカンダリカラー
     /*フォント*/
     @include headline_small();
     /*色*/
-    color: $headline;
+    color: $first;
 }
 @mixin highlight{
     /*色*/
-    color: $highlight;
+    color: $second;
 }
 
 /*********************ボックスデザイン*********************/
@@ -67,7 +65,7 @@ $secondary: #c6fdff;//セカンダリカラー
     margin: 0.5rem;
     padding: 0.2rem;
     /*ボーダー*/
-    border: solid 3px $highlight;
+    border: solid 3px $main;
     /*配色*/
     background-color: $main;
     /*影*/
@@ -77,7 +75,7 @@ $secondary: #c6fdff;//セカンダリカラー
     margin: 0.1rem;
     padding: 0.1rem;
     /*ボーダー*/
-    border: dashed 1px $highlight;
+    border: dashed 1px $second;
     border-radius: 10px;
 }
 @mixin box3{
@@ -85,9 +83,9 @@ $secondary: #c6fdff;//セカンダリカラー
     margin: 0.3rem;
     padding: 0.3rem;
     /*ボーダー*/
-    border: solid 2px $secondary;
+    border: solid 2px $second;
     /*配色*/
-    background-color: $background;
+    background-color: $base;
 }
 /*********************コンテナ〜セクション*********************/
 .container {
@@ -98,11 +96,11 @@ $secondary: #c6fdff;//セカンダリカラー
     height: auto;
     width: auto;
     /*余白*/
-    padding: auto;
-    margin: auto;
+    padding: 0;
+    margin: 0;
     /*色*/
-    background-color: $background;
-    color: $headline;
+    background-color: $base;
+    color: $main;
 
     .header {
         //ヘッダー
@@ -114,8 +112,8 @@ $secondary: #c6fdff;//セカンダリカラー
         padding: auto;
         margin: auto;
         /*色*/
-        background-color: $background;
-        color: $headline;
+        background-color: $base;
+        color: $main;
 
         .header_title {
             /*レイアウト*/
@@ -128,8 +126,8 @@ $secondary: #c6fdff;//セカンダリカラー
             /*フォント*/
             @include header_title();
             /*色*/
-            background-color: $background;
-            color: $headline;
+            background-color: $base;
+            color: $main;
         }
 
         .header_nav {
@@ -142,8 +140,7 @@ $secondary: #c6fdff;//セカンダリカラー
             margin: auto;
             /*フォント*/
             /*色*/
-            background-color: $background;
-            color: $headline;
+            color: $main;
         }
     }
 
@@ -157,8 +154,8 @@ $secondary: #c6fdff;//セカンダリカラー
         padding: auto;
         margin: auto;
         /*色*/
-        background-color: $background;
-        color: $headline;
+        background-color: $base;
+        color: $main;
 
         .section {
             /*レイアウト*/
@@ -173,8 +170,8 @@ $secondary: #c6fdff;//セカンダリカラー
                 /*フォント*/
                 @include section();
                 /*色*/
-                background-color: $background;
-                color: $headline;
+                background-color: $base;
+                color: $main;
             }
 
             .section_content {
@@ -186,8 +183,8 @@ $secondary: #c6fdff;//セカンダリカラー
                 /*フォント*/
 
                 /*色*/
-                background-color: $background;
-                color: $headline;
+                background-color: $base;
+                color: $main;
             }
         }
     }
@@ -202,8 +199,8 @@ $secondary: #c6fdff;//セカンダリカラー
         padding: auto;
         margin: auto;
         /*色*/
-        background-color: $background;
-        color: $headline;
+        background-color: $base;
+        color: $main;
 
         .copyright {
             /*レイアウト*/
@@ -215,8 +212,8 @@ $secondary: #c6fdff;//セカンダリカラー
             margin: auto;
             /*フォント*/
             /*色*/
-            background-color: $background;
-            color: $headline;
+            background-color: $base;
+            color: $main;
         }
     }
 }

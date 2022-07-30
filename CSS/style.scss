@@ -1,14 +1,99 @@
+/*html*/
+@media (max-width:780px) {
+    html {
+        font-size: 14px;
+    }
+}
 
 /*配色*/
-$background: #faeee7;
-$headline: #33272a;
-$paragraph: #594a4e;
-$highlight: #ff8ba7;
-$secondary: #ffc6c7;
+$background: #faeee7;//背景色１
+$headline: #33272a;//見出し色
+$paragraph: #594a4e;//段落色
+$main: #fffffe;//メインカラー
+$highlight: #ff8ba7;//アクセントカラー
+$secondary: #c6fdff;//セカンダリカラー
 
+/*********************mixin*********************/
+/***********フォント・文字***********/
+@mixin basic_font{
+    font-family: "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    "Mayryo",
+    sans-serif;
+}
+/*ヘッダータイトル*/
+@mixin header_title {
+    font-size: 2rem;
+    @include basic_font();
+}
+
+/*見出し*/
+@mixin headline_big {//見出し大
+    font-size: 1.5rem;
+    @include basic_font();
+
+}
+
+@mixin headline_medium {//見出し中
+    font-size: 1.2rem;
+    @include basic_font();
+
+}
+
+@mixin headline_small {//見出し小
+    font-size: 1.1rem;
+    @include basic_font();
+}
+
+@mixin section{
+    @include headline_big()
+}
+@mixin element {
+    /*フォント*/
+    @include headline_small();
+    /*色*/
+    color: $headline;
+}
+@mixin highlight{
+    /*色*/
+    color: $highlight;
+}
+
+/*********************ボックスデザイン*********************/
+@mixin box1{
+    /*余白*/
+    margin: 0.5rem;
+    padding: 0.2rem;
+    /*ボーダー*/
+    border: solid 3px $highlight;
+    /*配色*/
+    background-color: $main;
+    /*影*/
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;}
+@mixin box2{
+    /*余白*/
+    margin: 0.1rem;
+    padding: 0.1rem;
+    /*ボーダー*/
+    border: dashed 1px $highlight;
+    border-radius: 10px;
+}
+@mixin box3{
+    /*余白*/
+    margin: 0.3rem;
+    padding: 0.3rem;
+    /*ボーダー*/
+    border: solid 2px $secondary;
+    /*配色*/
+    background-color: $background;
+}
 /*********************コンテナ〜セクション*********************/
 .container {
     /*レイアウト*/
+    display: block;
+    clear: both;
     /*サイズ*/
     height: auto;
     width: auto;
@@ -20,6 +105,7 @@ $secondary: #ffc6c7;
     color: $headline;
 
     .header {
+        //ヘッダー
         /*レイアウト*/
         /*サイズ*/
         height: auto;
@@ -40,6 +126,7 @@ $secondary: #ffc6c7;
             padding: auto;
             margin: auto;
             /*フォント*/
+            @include header_title();
             /*色*/
             background-color: $background;
             color: $headline;
@@ -55,12 +142,13 @@ $secondary: #ffc6c7;
             margin: auto;
             /*フォント*/
             /*色*/
-            background-color: &$background;
+            background-color: $background;
             color: $headline;
         }
     }
 
     .main {
+        //メイン
         /*レイアウト*/
         /*サイズ*/
         height: auto;
@@ -73,6 +161,7 @@ $secondary: #ffc6c7;
         color: $headline;
 
         .section {
+            /*レイアウト*/
             .section_title {
                 /*レイアウト*/
                 /*サイズ*/
@@ -82,19 +171,18 @@ $secondary: #ffc6c7;
                 padding: auto;
                 margin: auto;
                 /*フォント*/
+                @include section();
                 /*色*/
                 background-color: $background;
                 color: $headline;
             }
 
             .section_content {
-                /*レイアウト*/
+                /*レイアウト*/          
                 /*サイズ*/
                 height: auto;
                 width: auto;
-                /*余白*/
-                padding: auto;
-                margin: auto;
+                /*ボックス*/
                 /*フォント*/
 
                 /*色*/
@@ -105,6 +193,7 @@ $secondary: #ffc6c7;
     }
 
     .footer {
+        //フッター
         /*レイアウト*/
         /*サイズ*/
         height: auto;
@@ -131,3 +220,26 @@ $secondary: #ffc6c7;
         }
     }
 }
+
+/*エレメント〜パラグラフ*/
+
+.about_element {
+    /*レイアウト*/
+    /*サイズ*/
+    @include box1();
+    @include element();
+    .element_content{
+        @include box2();
+    }
+}
+.charactor_element{
+    @include box1();
+    @include element()
+}
+
+/*ハイライト*/
+.highlight{
+    @include highlight();
+}
+
+/*about*/

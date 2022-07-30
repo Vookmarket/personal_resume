@@ -1,0 +1,133 @@
+
+/*配色*/
+$background: #faeee7;
+$headline: #33272a;
+$paragraph: #594a4e;
+$highlight: #ff8ba7;
+$secondary: #ffc6c7;
+
+/*********************コンテナ〜セクション*********************/
+.container {
+    /*レイアウト*/
+    /*サイズ*/
+    height: auto;
+    width: auto;
+    /*余白*/
+    padding: auto;
+    margin: auto;
+    /*色*/
+    background-color: $background;
+    color: $headline;
+
+    .header {
+        /*レイアウト*/
+        /*サイズ*/
+        height: auto;
+        width: auto;
+        /*余白*/
+        padding: auto;
+        margin: auto;
+        /*色*/
+        background-color: $background;
+        color: $headline;
+
+        .header_title {
+            /*レイアウト*/
+            /*サイズ*/
+            height: auto;
+            width: auto;
+            /*余白*/
+            padding: auto;
+            margin: auto;
+            /*フォント*/
+            /*色*/
+            background-color: $background;
+            color: $headline;
+        }
+
+        .header_nav {
+            /*レイアウト*/
+            /*サイズ*/
+            height: auto;
+            width: auto;
+            /*余白*/
+            padding: auto;
+            margin: auto;
+            /*フォント*/
+            /*色*/
+            background-color: &$background;
+            color: $headline;
+        }
+    }
+
+    .main {
+        /*レイアウト*/
+        /*サイズ*/
+        height: auto;
+        width: auto;
+        /*余白*/
+        padding: auto;
+        margin: auto;
+        /*色*/
+        background-color: $background;
+        color: $headline;
+
+        .section {
+            .section_title {
+                /*レイアウト*/
+                /*サイズ*/
+                height: auto;
+                width: auto;
+                /*余白*/
+                padding: auto;
+                margin: auto;
+                /*フォント*/
+                /*色*/
+                background-color: $background;
+                color: $headline;
+            }
+
+            .section_content {
+                /*レイアウト*/
+                /*サイズ*/
+                height: auto;
+                width: auto;
+                /*余白*/
+                padding: auto;
+                margin: auto;
+                /*フォント*/
+
+                /*色*/
+                background-color: $background;
+                color: $headline;
+            }
+        }
+    }
+
+    .footer {
+        /*レイアウト*/
+        /*サイズ*/
+        height: auto;
+        width: auto;
+        /*余白*/
+        padding: auto;
+        margin: auto;
+        /*色*/
+        background-color: $background;
+        color: $headline;
+
+        .copyright {
+            /*レイアウト*/
+            /*サイズ*/
+            height: auto;
+            width: auto;
+            /*余白*/
+            padding: auto;
+            margin: auto;
+            /*フォント*/
+            /*色*/
+            background-color: $background;
+            color: $headline;
+        }
+    }
+}

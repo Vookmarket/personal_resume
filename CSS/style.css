@@ -1,79 +1,125 @@
-.container{
-    position: absolute;
-    min-width: 590;
-    height: 100%;
-}
-.header_container{
-    position: sticky;
-    top: 0;
-    display: block;
-    clear: both;
-}
-.title{
-    float: left;
-}
-nav{
-    float: left;
-}
-section{
-    display: block;
-    clear: both;
-}
-.main_container{
-    height: 100%;
-    position: relative;
-}
-.section_container{
-    height: 100%;
-    position: sticky;
+@charset "UTF-8";
+/*配色*/
+/*********************コンテナ〜セクション*********************/
+.container {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
 }
 
-.about_content{
-    display: block;
-    clear: both;
+.container .header {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
 }
 
-.about_title{
-    text-align: center;
+.container .header .header_title {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*フォント*/
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
 }
 
-.about_child{
-    width: 100%;
-    margin: auto;
+.container .header .header_nav {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*フォント*/
+  /*色*/
+  background-color: .container .header .header_nav #faeee7;
+  color: #33272a;
 }
 
-.about_child_content{
-    width: 100%;
-    margin: auto;
-}
-/*定義リスト*/
-.dl{
-    text-align: center;
-}
-.dl_list{
-    display: block;
-    clear: both;
-    margin: auto;
-    width: 100%;
-}
-.dt{
-    float: left;
-    width: 100px;
-    text-align: center;
+.container .main {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
 }
 
-.dd{
-   float: left;
+.container .main .section .section_title {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*フォント*/
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
 }
 
-@media (min-width:1110px) {
-    .about_content{
-        display: block;
-        clear: both;
-    }
-    
-    .about_child{
-        float: left;
-        width: 50%;
-    }
+.container .main .section .section_content {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*フォント*/
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
 }
+
+.container .footer {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
+}
+
+.container .footer .copyright {
+  /*レイアウト*/
+  /*サイズ*/
+  height: auto;
+  width: auto;
+  /*余白*/
+  padding: auto;
+  margin: auto;
+  /*フォント*/
+  /*色*/
+  background-color: #faeee7;
+  color: #33272a;
+}
+/*# sourceMappingURL=style.css.map */

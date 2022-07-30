@@ -1,0 +1,79 @@
+.container{
+    position: absolute;
+    min-width: 590;
+    height: 100%;
+}
+.header_container{
+    position: sticky;
+    top: 0;
+    display: block;
+    clear: both;
+}
+.title{
+    float: left;
+}
+nav{
+    float: left;
+}
+section{
+    display: block;
+    clear: both;
+}
+.main_container{
+    height: 100%;
+    position: relative;
+}
+.section_container{
+    height: 100%;
+    position: sticky;
+}
+
+.about_content{
+    display: block;
+    clear: both;
+}
+
+.about_title{
+    text-align: center;
+}
+
+.about_child{
+    width: 100%;
+    margin: auto;
+}
+
+.about_child_content{
+    width: 100%;
+    margin: auto;
+}
+/*定義リスト*/
+.dl{
+    text-align: center;
+}
+.dl_list{
+    display: block;
+    clear: both;
+    margin: auto;
+    width: 100%;
+}
+.dt{
+    float: left;
+    width: 100px;
+    text-align: center;
+}
+
+.dd{
+   float: left;
+}
+
+@media (min-width:1110px) {
+    .about_content{
+        display: block;
+        clear: both;
+    }
+    
+    .about_child{
+        float: left;
+        width: 50%;
+    }
+}

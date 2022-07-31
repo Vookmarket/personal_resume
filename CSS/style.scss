@@ -1,242 +1,163 @@
-/*html*/
-@media (max-width:780px) {
-    html {
-        font-size: 14px;
-    }
-}
+/*基本プロパティ*/
+/*レイアウト*/
+/*ボックスデザイン*/
+/*フォント*/
+/***********配色***********/
+$base: red;
+$main1: blue;
+$main2: green;
+$second: yellow;
+/***********テキスト・フォント***********/
+$font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
 
-/*配色*/
-$main :#7e6752;
-$first :#aed09e;
-$second: #61b292;
-$base:#f4eec0;
-
-/*********************mixin*********************/
-/***********フォント・文字***********/
-@mixin basic_font{
-    font-family: "Helvetica Neue",
-    Arial,
-    "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans",
-    "Mayryo",
-    sans-serif;
-}
-/*ヘッダータイトル*/
+/***********ヘッダータイトル***********/
 @mixin header_title {
+    font-size: 3rem;
+    font-family: $font1;
+
+}
+
+/************見出し***********/
+/*見出し大*/
+@mixin headline_bid {
+    font-family: $font1;
     font-size: 2rem;
-    @include basic_font();
 }
 
-/*見出し*/
-@mixin headline_big {//見出し大
+/*見出し中*/
+@mixin headline_medium {
+    font-family: $font1;
     font-size: 1.5rem;
-    @include basic_font();
-
 }
 
-@mixin headline_medium {//見出し中
+/*見出し小*/
+@mixin headline_small {
+    font-family: $font1;
     font-size: 1.2rem;
-    @include basic_font();
-
-}
-
-@mixin headline_small {//見出し小
-    font-size: 1.1rem;
-    @include basic_font();
-}
-
-@mixin section{
-    @include headline_big()
-}
-@mixin element {
-    /*フォント*/
-    @include headline_small();
-    /*色*/
+    font: bold;
     color: $first;
 }
-@mixin highlight{
-    /*色*/
+
+/*段落*/
+@mixin paragraph {
+    font-family: $font;
+    font-size: 1rem;
+}
+
+/*アクセント・ハイライト*/
+@mixin highlight {
+    font-family: $font;
+    font-size: 1rem;
+    font: bold;
     color: $second;
 }
 
-/*********************ボックスデザイン*********************/
-@mixin box1{
+/*リンク*/
+
+/***********ボックス***********/
+@mixin box1 {
+    //直線ボックス
     /*余白*/
-    margin: 0.5rem;
-    padding: 0.2rem;
+    margin: auto;
+    padding: auto;
     /*ボーダー*/
-    border: solid 3px $main;
-    /*配色*/
-    background-color: $main;
+    border: solid 3px $main1;
+    /*背景*/
+    background-color: $base;
     /*影*/
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;}
-@mixin box2{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+@mixin box2 {
+    //破線ボックス
     /*余白*/
-    margin: 0.1rem;
-    padding: 0.1rem;
+    margin: auto;
+    padding: auto;
     /*ボーダー*/
-    border: dashed 1px $second;
+    border: dashed 3px $main1;
+    /*背景*/
+    background-color: $base;
+    /*影*/
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+}
+
+@mixin box3 {
+    //角丸ボックス
+    /*余白*/
+    margin: auto;
+    padding: auto;
+    /*ボーダー*/
+    border: solid 3px $main1;
     border-radius: 10px;
-}
-@mixin box3{
-    /*余白*/
-    margin: 0.3rem;
-    padding: 0.3rem;
-    /*ボーダー*/
-    border: solid 2px $second;
-    /*配色*/
+    /*背景*/
     background-color: $base;
+    /*影*/
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
 }
-/*********************コンテナ〜セクション*********************/
-.container {
-    /*レイアウト*/
-    display: block;
-    clear: both;
-    /*サイズ*/
-    height: auto;
-    width: auto;
-    /*余白*/
-    padding: 0;
-    margin: 0;
-    /*色*/
-    background-color: $base;
-    color: $main;
 
-    .header {
-        //ヘッダー
-        /*レイアウト*/
-        /*サイズ*/
-        height: auto;
-        width: auto;
-        /*余白*/
-        padding: auto;
-        margin: auto;
-        /*色*/
-        background-color: $base;
-        color: $main;
+/***********リスト***********/
+@mixin list1 {}
 
-        .header_title {
+@mixin list2 {}
+
+/***********テーブル***********/
+@mixin table1 {}
+
+@mixin table2 {}
+
+/***********画像***********/
+@mixin image1 {}
+
+@mixin image2 {}
+
+/***************************************
+スタイル＋レイアウト***********************
+***************************************/
+
+@media (max-width:768px) {
+    //スマホ用レイアウト
+
+}
+
+@media (min-width:768px) {
+
+    //PC用レイアウト
+    .container {
+        .header {
             /*レイアウト*/
-            /*サイズ*/
-            height: auto;
-            width: auto;
+            position: fixed;
+            top: 0;
+            /*ボックスデザイン*/
+            width: 100%;
+            /*背景*/
+            background-color: $main1;
             /*余白*/
-            padding: auto;
-            margin: auto;
-            /*フォント*/
-            @include header_title();
-            /*色*/
-            background-color: $base;
-            color: $main;
-        }
-
-        .header_nav {
-            /*レイアウト*/
-            /*サイズ*/
-            height: auto;
-            width: auto;
-            /*余白*/
-            padding: auto;
-            margin: auto;
-            /*フォント*/
-            /*色*/
-            color: $main;
-        }
-    }
-
-    .main {
-        //メイン
-        /*レイアウト*/
-        /*サイズ*/
-        height: auto;
-        width: auto;
-        /*余白*/
-        padding: auto;
-        margin: auto;
-        /*色*/
-        background-color: $base;
-        color: $main;
-
-        .section {
-            /*レイアウト*/
-            .section_title {
+            .header_title {
                 /*レイアウト*/
-                /*サイズ*/
-                height: auto;
-                width: auto;
-                /*余白*/
-                padding: auto;
-                margin: auto;
+                /*ボックスデザイン*/
                 /*フォント*/
-                @include section();
-                /*色*/
-                background-color: $base;
-                color: $main;
             }
 
-            .section_content {
-                /*レイアウト*/          
-                /*サイズ*/
-                height: auto;
-                width: auto;
-                /*ボックス*/
-                /*フォント*/
-
-                /*色*/
-                background-color: $base;
-                color: $main;
+            .header_nav {
+                .header_nav_ul{
+                    display: flex;
+                    justify-content: space-between;
+                    .header_nav_li{
+                        display: block;
+                        padding: 10px;
+                    }
+                }
             }
         }
-    }
 
-    .footer {
-        //フッター
-        /*レイアウト*/
-        /*サイズ*/
-        height: auto;
-        width: auto;
-        /*余白*/
-        padding: auto;
-        margin: auto;
-        /*色*/
-        background-color: $base;
-        color: $main;
-
-        .copyright {
-            /*レイアウト*/
-            /*サイズ*/
-            height: auto;
-            width: auto;
-            /*余白*/
-            padding: auto;
-            margin: auto;
-            /*フォント*/
-            /*色*/
+        .main {
+            /*背景*/
             background-color: $base;
-            color: $main;
+        }
+
+        .footer {
+            /*背景*/
+            background-color: $base;
         }
     }
 }
-
-/*エレメント〜パラグラフ*/
-
-.about_element {
-    /*レイアウト*/
-    /*サイズ*/
-    @include box1();
-    @include element();
-    .element_content{
-        @include box2();
-    }
-}
-.charactor_element{
-    @include box1();
-    @include element()
-}
-
-/*ハイライト*/
-.highlight{
-    @include highlight();
-}
-
-/*about*/

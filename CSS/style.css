@@ -1,200 +1,60 @@
 @charset "UTF-8";
-/*html*/
-@media (max-width: 780px) {
-  html {
-    font-size: 14px;
+/*基本プロパティ*/
+/*レイアウト*/
+/*ボックスデザイン*/
+/*フォント*/
+/***********配色***********/
+/***********テキスト・フォント***********/
+/***********ヘッダータイトル***********/
+/************見出し***********/
+/*見出し大*/
+/*見出し中*/
+/*見出し小*/
+/*段落*/
+/*アクセント・ハイライト*/
+/*リンク*/
+/***********ボックス***********/
+/***********リスト***********/
+/***********テーブル***********/
+/***********画像***********/
+/***************************************
+スタイル＋レイアウト***********************
+***************************************/
+@media (min-width: 768px) {
+  .container .header {
+    /*レイアウト*/
+    position: fixed;
+    top: 0;
+    /*ボックスデザイン*/
+    width: 100%;
+    /*背景*/
+    background-color: blue;
+    /*余白*/
+  }
+  .container .header .header_title {
+    /*レイアウト*/
+    /*ボックスデザイン*/
+    /*フォント*/
+  }
+  .container .header .header_nav .header_nav_ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .container .header .header_nav .header_nav_ul .header_nav_li {
+    display: block;
+    padding: 10px;
+  }
+  .container .main {
+    /*背景*/
+    background-color: red;
+  }
+  .container .footer {
+    /*背景*/
+    background-color: red;
   }
 }
-
-/*配色*/
-/*********************mixin*********************/
-/***********フォント・文字***********/
-/*ヘッダータイトル*/
-/*見出し*/
-/*********************ボックスデザイン*********************/
-/*********************コンテナ〜セクション*********************/
-.container {
-  /*レイアウト*/
-  display: block;
-  clear: both;
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: 0;
-  margin: 0;
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-.container .header {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: auto;
-  margin: auto;
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-.container .header .header_title {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: auto;
-  margin: auto;
-  /*フォント*/
-  font-size: 2rem;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-.container .header .header_nav {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: auto;
-  margin: auto;
-  /*フォント*/
-  /*色*/
-  color: #7e6752;
-}
-
-.container .main {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: auto;
-  margin: auto;
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-.container .main .section {
-  /*レイアウト*/
-}
-
-.container .main .section .section_title {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: auto;
-  margin: auto;
-  /*フォント*/
-  font-size: 1.5rem;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-.container .main .section .section_content {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*ボックス*/
-  /*フォント*/
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-.container .footer {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: auto;
-  margin: auto;
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-.container .footer .copyright {
-  /*レイアウト*/
-  /*サイズ*/
-  height: auto;
-  width: auto;
-  /*余白*/
-  padding: auto;
-  margin: auto;
-  /*フォント*/
-  /*色*/
-  background-color: #f4eec0;
-  color: #7e6752;
-}
-
-/*エレメント〜パラグラフ*/
-.about_element {
-  /*レイアウト*/
-  /*サイズ*/
-  /*余白*/
-  margin: 0.5rem;
-  padding: 0.2rem;
-  /*ボーダー*/
-  border: solid 3px #7e6752;
-  /*配色*/
-  background-color: #7e6752;
-  /*影*/
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  /*フォント*/
-  font-size: 1.1rem;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
-  /*色*/
-  color: #aed09e;
-}
-
-.about_element .element_content {
-  /*余白*/
-  margin: 0.1rem;
-  padding: 0.1rem;
-  /*ボーダー*/
-  border: dashed 1px #61b292;
-  border-radius: 10px;
-}
-
-.charactor_element {
-  /*余白*/
-  margin: 0.5rem;
-  padding: 0.2rem;
-  /*ボーダー*/
-  border: solid 3px #7e6752;
-  /*配色*/
-  background-color: #7e6752;
-  /*影*/
-  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
-  /*フォント*/
-  font-size: 1.1rem;
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
-  /*色*/
-  color: #aed09e;
-}
-
-/*ハイライト*/
-.highlight {
-  /*色*/
-  color: #61b292;
-}
-
-/*about*/
 /*# sourceMappingURL=style.css.map */

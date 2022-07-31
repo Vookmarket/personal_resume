@@ -113,6 +113,19 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 /***************************************
 スタイル＋レイアウト***********************
 ***************************************/
+/*ボックスの分割*/
+@mixin devide_parent {
+    //親要素
+    content: "";
+    display: block;
+    clear: both;
+}
+
+@mixin devide_child($width) {
+    //子要素
+    float: left;
+    width: $width;
+}
 
 @media (max-width:768px) {
     //スマホ用レイアウト
@@ -123,28 +136,36 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
     //PC用レイアウト
     .container {
+
+        /*サイズ*/
         .header {
+            //ヘッダー
             /*レイアウト*/
-            position: fixed;
-            top: 0;
+            @include devide_parent();
             /*ボックスデザイン*/
             width: 100%;
+
             /*背景*/
-            background-color: $main1;
             /*余白*/
+            //ヘッダータイトル
             .header_title {
                 /*レイアウト*/
+                @include devide_child(15%);
                 /*ボックスデザイン*/
+                background-color: $main1;
                 /*フォント*/
             }
 
+            //ヘッダーナビゲーション
             .header_nav {
-                .header_nav_ul{
-                    display: flex;
-                    justify-content: space-between;
-                    .header_nav_li{
-                        display: block;
-                        padding: 10px;
+                @include devide_child(85%);
+                background-color: $main2;
+                .header_nav_ul {
+                    /*レイアウト*/
+                    @include devide_parent();
+                    .header_nav_li {
+                        /*レイアウト*/
+                        @include devide_child(11.6%)
                     }
                 }
             }
@@ -153,9 +174,25 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
         .main {
             /*背景*/
             background-color: $base;
+
+            .section {
+                /*レイアウト*/
+                /*ボックス*/
+
+                .section_content {
+                    @include devide_parent();
+
+                    .charactor_element {
+                        @include devide_child(50%)
+                    }
+                }
+
+
+            }
         }
 
         .footer {
+            /*レイアウト*/
             /*背景*/
             background-color: $base;
         }

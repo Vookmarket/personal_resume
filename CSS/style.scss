@@ -16,7 +16,10 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
 /***********ヘッダータイトル***********/
 @mixin header_title {
+    /*余白*/
+    padding: 0.5rem;
     font-size: 3rem;
+    letter-spacing: 0.1em;
     font-family: $font1;
     background-color: $first_color;
     color: $txt_ico;
@@ -32,30 +35,47 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 /************見出し***********/
 /*見出し大*/
 @mixin headline_big {
+    /*余白*/
+    margin: 2rem 0rem 1rem 0rem;
+    padding: 0rem;
+    /*ボーダー*/
     border-bottom: solid 3px $second_color;
-    font-family: $first_color;
+    font-family: $font1;
     font-size: 2rem;
 }
 
 /*見出し中*/
 @mixin headline_medium {
-    padding: 0.3rem;
+    /*余白*/
+    margin: 1rem 0rem 0.5rem 0.5rem;
+    padding: 0.5rem;
+    /*ボーダー*/
     border-left: solid 3px $second_color;
-    font-family: $primary_text;
+    font-family: $font1;
     font-size: 1.5rem;
 }
 
 /*見出し小*/
 @mixin headline_small {
-    font-family: $primary_text;
-    font-size: 1.2rem;
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px $divider_color;
+    font-family: $font1;
+    font-size: 1.3rem;
     font: bold;
-    color: $first;
+    color: $second_color;
 }
 
 /*段落*/
 @mixin paragraph {
-    font-family: $font;
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: $font1;
     font-size: 1rem;
 }
 
@@ -74,7 +94,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
     //直線ボックス
     /*余白*/
     margin: 0.3rem;
-    padding: 0.3rem;
+    padding: 0.3rem 0.3rem 1rem 0.3rem;
     /*ボーダー*/
     border: solid 3px $divider_color;
     /*背景*/
@@ -111,18 +131,20 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 }
 
 /***********リスト***********/
-@mixin list1 {}
+@mixin list1 {
+    list-style: armenian;
+}
 
 @mixin list2 {}
 
 /***********テーブル***********/
-@mixin table1($th) {
+@mixin table1 {
     width: 100%;
 
     th {
         position: relative;
         text-align: left;
-        width: $th;
+        width: 15%;
 
         &:after {
             display: block;
@@ -140,8 +162,9 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
     td {
         text-align: left;
-        width: calc(100%-$th);
-        padding:7px 0 7px 30px;
+
+        width: 75;
+        padding: 7px 0 7px 30px;
 
     }
 }
@@ -200,6 +223,8 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
     //PC用レイアウト
     .container {
+        /*背景*/
+        background-color: $third_color;
 
         /*サイズ*/
         .header {
@@ -243,8 +268,6 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
         .main {
             /*余白*/
             margin: 5px;
-            /*背景*/
-            background-color: $third_color;
             /*フォント*/
             color: $first_color;
 
@@ -262,11 +285,14 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                         /*フォント*/
                         @include headline_medium();
                     }
-                    .history_table{
-                        @include table1(15%);
+
+                    .history_table {
+                        /*余白*/
+                        margin-left: 1rem;
+                        @include table1();
                     }
                 }
-                
+
                 .charactor_content {
                     /*レイアウト*/
                     @include devide_parent();
@@ -280,16 +306,32 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                         color: $txt_ico;
 
                         .element_content {
-                            .charactor_vet_parent {
-                                @include devide_parent();
-                            }
 
                             .charactor_vet_title {
-                                @include devide_child(28%);
+                                /*フォント*/
+                                @include headline_small();
                             }
 
                             .charactor_vet_content {
-                                @include devide_child(72%)
+                                /*余白*/
+                                margin-left: 2rem;
+                                padding: 0.1rem;
+                                /*フォント*/
+                                @include paragraph();
+                            }
+
+                            .charactor_hobby_title {
+                                /*フォント*/
+                                @include headline_small();
+                            }
+
+                            .charactor_hobby_content {
+                                /*余白*/
+                                margin-left: 2rem;
+
+                                padding: 0.1rem;
+                                /*フォント*/
+                                @include paragraph();
                             }
 
                         }
@@ -308,17 +350,83 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                         @include box1;
                         /*フォント*/
                         color: $txt_ico;
+
+                        .skill_experienced_title {
+                            @include headline_small();
+                        }
+
+                        .skill_experienced_content {
+                            /*余白*/
+                            margin-left: 2rem;
+                            @include paragraph();
+
+                        }
+
+                        .skill_unexperienced_title {
+                            @include headline_small();
+                        }
+
+                        .skill_unexperienced_content {
+                            /*余白*/
+                            margin-left: 2rem;
+                            @include paragraph();
+
+                        }
                     }
                 }
 
+                .goal_content {
+                    /*レイアウト*/
+                    @include devide_parent();
 
+                    .goal_element {
+                        /*レイアウト*/
+                        @include devide_child(33.3%);
+                        /*ボックス*/
+                        @include box1;
+                        /*フォント*/
+                        color: $txt_ico;
+
+                        ul {
+                            li {
+                                /*余白*/
+                                margin-left: 1rem;
+                                letter-spacing: 0.1em;
+                                line-height: 2;
+                                list-style-type: square;
+                            }
+                        }
+                    }
+                }
+
+                .textbook_content {
+                    ul {
+                        li {
+                            /*余白*/
+                            margin-left: 1rem;
+                            letter-spacing: 0.1em;
+                            line-height: 2;
+                            list-style-type: square;
+                        }
+                    }
+                }
             }
         }
 
         .footer {
             /*レイアウト*/
+            text-align: center;
+            /*余白*/
+            padding: 1rem;
             /*背景*/
             background-color: $first_color;
+
+            /*フォント*/
+            .copywrite {
+                /*フォント*/
+                font-size: 0.5rem;
+                color: $txt_ico;
+            }
         }
     }
 }

@@ -42,7 +42,7 @@
                     <li class="header_nav_li">人物</li>
                     <li class="header_nav_li">技術・能力</li>
                     <li class="header_nav_li">目標</li>
-                    <li class="header_nav_li">学習・参考図書</li>
+                    <li class="header_nav_li">教材</li>
                 </ul>
             </nav>
         </div>
@@ -50,35 +50,36 @@
             <div class="section about">
                 <div class="section_title">ページの目的</div>
                 <div class="section_content">
-                    
+                    <p>このページは、獣医師 本間弘樹を説明するために HTML、Sassで書かれたWebページです</p>
+                    <p>私についての概略を知りたい場合にご利用ください</p>
                 </div>
             </div>
             <div class="section history">
                 <div class="section_title">経歴</div>
                 <div class="section_content">
-                    <div>
-                        <div>
-                            <div>2012/03</div><div>愛知県私立岡崎城西高等学校卒業</div>
-                        </div>
-                        <div>
-                            <div>2012/04</div><div>獣医学科を目指して<span class="highlight">１年間浪人</span></div>
-                        </div>
-                        <div>
-                            <div>2013/04</div><div>岐阜大学応用生物科学部<span class="highlight">共同獣医学科入学</span></div>
-                        </div>
-                        <div>
-                            <div>2017/03</div><div>学業(研究)・就活・仕事・家庭問題が重なり心身耗弱して不登校、試験を受けず<span class="highlight">留年決定</span></div>
-                        </div>
-                        <div>
-                            <div>2020/03</div><div>岐阜大学応用生物科学部共同獣医学科卒業、<span class="highlight">獣医師国家試験合格</span></div>
-                        </div>
-                        <div>
-                            <div>2020/04</div><div>静岡県浜松市のアルファ動物病院にて一次小動物臨床に従事</div>
-                        </div>
-                        <div>
-                            <div>2022/06</div><div>アルファ動物病院を退職、兵庫県神戸市へ移住</div>
-                        </div>
-                    </div>
+                    <table class="history_table">
+                        <tr class="history_tr">
+                            <th class="history_th">2012/03</th><td class="history_td">愛知県私立岡崎城西高等学校卒業</td>
+                        </tr>
+                        <tr class="history_tr">
+                            <th class="history_th">2012/04</th><td class="history_td">獣医学科を目指して<span class="highlight">１年間浪人</span></td>
+                        </tr>
+                        <tr class="history_tr">
+                            <th class="history_th">2013/04</th><td class="history_td">岐阜大学応用生物科学部<span class="highlight">共同獣医学科入学</span></td>
+                        </tr>
+                        <tr class="history_tr">
+                            <th class="history_th">2017/03</th><td class="history_td">学業(研究)・就活・仕事・家庭問題が重なり心身耗弱して不登校、試験を受けず<span class="highlight">留年決定</span></td>
+                        </tr>
+                        <tr class="history_tr">
+                            <th class="history_th">2020/03</th><td class="history_td">療養し心機一転、岐阜大学応用生物科学部共同獣医学科卒業、<span class="highlight">獣医師国家試験合格</span></td>
+                        </tr>
+                        <tr class="history_tr">
+                            <th class="history_th">2020/04</th><td class="history_td">静岡県浜松市のアルファ動物病院にて一次小動物臨床に従事</td>
+                        </tr>
+                        <tr class="history_tr">
+                            <th class="history_th">2022/06</th><td class="history_td">アルファ動物病院を退職、彼女の住む兵庫県神戸市へ移住</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
             <div class="section charactor">
@@ -89,17 +90,17 @@
                             獣医師としての志
                         </div>
                         <div class="element_content">
-                            <div class="">
-                                <div class="">Evidence</div>
-                                <div class="">学術的根拠のある治療を優先的に提案します</div>
+                            <div class="charactor_vet_parent">
+                                <div class="charactor_vet_title">Evidence</div>
+                                <div class="charactor_vet_content">学術的根拠のある治療を優先的に提案します</div>
                             </div>
-                            <div class="">
-                                <div class="">Consensus</div>
-                                <div class="">病院内、獣医師同士でコンセンサスのある医療を提案します</div>
+                            <div class="charactor_vet_parent">
+                                <div class="charactor_vet_title">Consensus</div>
+                                <div class="charactor_vet_content">病院内、獣医師間でコンセンサスのある医療を提案します</div>
                             </div>
-                            <div class="">
-                                <div class="">Informed Consent</div>
-                                <div class="">疾病・検査・処置について、飼い主様への理解と決断をしやすい説明を心がけます</div>
+                            <div class="charactor_vet_parent">
+                                <div class="charactor_vet_title">Informed Consent</div>
+                                <div class="charactor_vet_content">飼い主様にとって理解と決断をしやすい説明を心がけます</div>
                             </div>
                         </div>
                     </div>
@@ -108,21 +109,46 @@
                             趣味・関心
                         </div>
                         <div class="element_content">
-                            <div>映画鑑賞</div>
-                            <div>映画館で観るのを好みます。アクション、歴史モノをよく鑑賞します</div>
-                            <div>IT・プログラミング</div>
-                            <div>業務効率化のために学習・制作しています。基本情報技術者試験の勉強もしています</div>
+                            <div>映画鑑賞</div><div>映画館で観るのを好みます。幅広いジャンルを観ますが。特にアクション、歴史モノをよく鑑賞します</div>
+                            <div>IT・プログラミング</div><div>業務効率化のために学習・Web制作をしています。基本情報技術者試験の勉強もしています</div>
+                            <div>経営。ビジネス</div><div>経営・ビジネススキルを高めるため、簿記、中小企業診断士の取得を目指しています</div>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="section skill">
                 <div class="section_title">技術・能力</div>
-                <div class="section_content"></div>
+                <div class="section_content skill_content">
+                    <div class="skill_element">
+                        <div class="element_title">経験済み・できること</div>
+                        <div class="element_content">
+                            <div>一般診療</div><div>問診・身体検査・臨床検査</div>
+                            <div>簡易な臨床検査</div><div>画像診断学会にて、特にX線検査・エコー検査の向上に努めています</div>
+                            <div>麻酔下検査</div><div>消化管内視鏡検査による異物摘出を経験済みです</div>
+                            <div>報告・連絡・相談</div><div>飼い主様と検査から得た情報を統合し、上級医の指示を仰ぎながらタスクを進行します</div>
+                            <div>簡易な手術執刀</div><div>去勢手術・卵巣子宮摘出術・帝王切開の経験数が特に多いです。その他、脾臓摘出・膀胱切開術等を経験済みです</div>
+                        </div>
+                    </div>
+                    <div class="skill_element">
+                        <div class="element_title">未経験・できないこと</div>
+                        <div class="element_content">
+                            <div>手術</div><div>消化管切開術・腹腔内陰睾・鼠径ヘルニア、会陰ヘルニア等、多くの手術の執刀未経験です</div>
+                            <div>薬剤分包</div><div>職務として、薬剤を分包・調剤する業務を担ったことはありません</div>
+                            <div>電子カルテ</div><div>電子カルテを導入した病院での経験はまだありません</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="section goal">
                 <div class="section_title">目標</div>
-                <div class="section_content"></div>
+                <div class="section_content">
+                    <div>獣医師</div>
+                    <ul>
+                        <li>外科技術、特に軟部外科手術技術の向上</li>
+                        <li>画像診断学会認定医資格の取得</li>
+                        <li></li>
+                    </ul>
+                </div>
             </div>
             <div class="section study">
                 <div class="section_title">学習・参考図書</div>
@@ -135,6 +161,7 @@
                         <li>小動物における細胞診の初歩の初歩</li>
                         <li>伴侶動物の臨床病理学など</li>
                         <li>犬と猫の問題行動の予防と対応</li>
+                        <li>ここからはじめる臨床診断学・臨床治療学</li>
                     </ul>
                 </div>
             </div>

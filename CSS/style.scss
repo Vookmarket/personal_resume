@@ -43,6 +43,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 }
 
 /************見出し***********/
+
 /*見出し大*/
 @mixin headline_big {
     /*余白*/
@@ -258,6 +259,9 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 }
 
 @media(max-width:792.9px) {
+    html{
+        font-size: 14px;
+    }
     .container {
         .header {
             //ヘッダー
@@ -368,6 +372,22 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                 }
             }
         }
+        .footer {
+            /*レイアウト*/
+            text-align: center;
+            /*余白*/
+            padding: 1rem;
+            /*背景*/
+            background-color: $first_color;
+
+            /*フォント*/
+            .copywrite {
+                /*フォント*/
+                font-size: 0.5rem;
+                color: $txt_ico;
+            }
+        }
+
     }
 
     .history {
@@ -427,6 +447,22 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                 }
             }
         }
+
+        .footer {
+            /*レイアウト*/
+            text-align: center;
+            /*余白*/
+            padding: 1rem;
+            /*背景*/
+            background-color: $first_color;
+
+            /*フォント*/
+            .copywrite {
+                /*フォント*/
+                font-size: 0.5rem;
+                color: $txt_ico;
+            }
+        }
     }
 
     .skill {
@@ -464,267 +500,51 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
         }
     }
 
-    .goal {}
-
-    .textbook {}
-
-}
-
-@media (min-width:792px) {
-
-    //共通のスタイル
-    .container {
-        /*背景*/
-        background-color: $third_color;
-
-        .header {
-            //ヘッダー
+    .goal {
+        .goal_content {
             /*レイアウト*/
-            @include devide_parent();
-            position: fixed;
-            z-index: 70;
-            /*ボックスデザイン*/
-            width: 100%;
 
-            /*背景*/
-            /*余白*/
-            //ヘッダータイトル
-
-            .header_title {
+            .goal_element {
                 /*レイアウト*/
-                @include devide_child(20%);
-                display: block;
-                text-align: center;
-                /*余白*/
-                margin: 0;
-                padding: 0.3rem;
-                /*ボックスデザイン*/
-                height: max-content;
+
+                /*ボックス*/
+                @include box1;
                 /*フォント*/
-                @include header_title(2rem);
+                color: $txt_ico;
 
-            }
+                ul {
+                    margin-left: 1rem;
 
-            .header_nav {
-                /*レイアウト*/
-                @include devide_child(80%);
-                text-align: center;
-
-                /*余白*/
-                margin: 0 auto 0 0;
-
-                background-color: $second_color;
-
-                /*ハンバーガーメニュー*/
-                @include hamburger();
-
-                .header_nav_ul {
-                    /*レイアウト*/
-                    display: none;
-                    z-index: 80;
-                    //display: none;
-                    /*余白*/
-                    margin-top: 5px;
-                    /*トランジション*/
-                    transition: all 0.3s ease-in;
-
-                    /*テキスト*/
-                    .header_nav_li {
-                        /*レイアウト*/
-                        position: relative;
-                        height: 2rem;
-
+                    li {
                         /*余白*/
-                        a {
-                            /*レイアウト*/
-                            width: 100%;
-                            height: 100%;
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            /*余白*/
-                            margin: auto;
-                            padding: 0;
-                            /*ボーダー*/
-                            border-radius: 10px;
-                            /*トランジション*/
-                            transition: all 0.3s ease-in;
-
-                            /*フォント*/
-                            @include header_nav(1rem);
-
-                            &:hover {
-                                @include nav_link();
-                            }
-                        }
-
+                        margin-left: 1rem;
+                        letter-spacing: 0.1em;
+                        line-height: 2;
+                        list-style-type: square;
                     }
                 }
             }
         }
 
-        .main {
-            /*余白*/
-            margin-left: 5px;
-            margin-right: 5px;
-            padding-top: 42px;
-            /*フォント*/
-            color: $first_color;
+    }
 
-            .section {
-
-                /*レイアウト*/
-                /*ボックス*/
-                .section_title {
-                    @include headline_big()
-                }
-
-                .section_content {
-                    .element_title {
-                        /*ボックス*/
-                        /*フォント*/
-                        @include headline_medium();
-                    }
-
-                    .history_table {
-                        /*余白*/
-                        margin-left: 2rem;
-                        @include table1();
-                    }
-                }
-
-                .charactor_content {
-                    /*レイアウト*/
-                    @include devide_parent();
-
-                    /*ボックス*/
-                    .charactor_element {
-                        @include devide_child(50%);
-                        /*ボックス*/
-                        @include box1();
-                        /*フォント*/
-                        color: $txt_ico;
-
-                        .element_content {
-
-                            .charactor_vet_title {
-                                /*フォント*/
-                                @include headline_small();
-                            }
-
-                            .charactor_vet_content {
-                                /*余白*/
-                                margin-left: 2rem;
-                                padding: 0.1rem;
-                                /*フォント*/
-                                @include paragraph();
-                            }
-
-                            .charactor_hobby_title {
-                                /*フォント*/
-                                @include headline_small();
-                            }
-
-                            .charactor_hobby_content {
-                                /*余白*/
-                                margin-left: 2rem;
-
-                                padding: 0.1rem;
-                                /*フォント*/
-                                @include paragraph();
-                            }
-
-                        }
-                    }
-                }
-
-                .skill_content {
-                    /*レイアウト*/
-                    @include devide_parent();
-
-                    /*ボックス*/
-                    .skill_element {
-                        /*レイアウト*/
-                        @include devide_child(50%);
-                        /*ボックス*/
-                        @include box1;
-                        /*フォント*/
-                        color: $txt_ico;
-
-                        .skill_experienced_title {
-                            @include headline_small();
-                        }
-
-                        .skill_experienced_content {
-                            /*余白*/
-                            margin-left: 2rem;
-                            @include paragraph();
-
-                        }
-
-                        .skill_unexperienced_title {
-                            @include headline_small();
-                        }
-
-                        .skill_unexperienced_content {
-                            /*余白*/
-                            margin-left: 2rem;
-                            @include paragraph();
-
-                        }
-                    }
-                }
-
-                .goal_content {
-                    /*レイアウト*/
-
-                    .goal_element {
-                        /*レイアウト*/
-                        /*ボックス*/
-                        @include box1;
-                        /*テキスト*/
-                        color: $txt_ico;
-
-                        ul {
-                            li {
-                                /*余白*/
-                                margin-left: 1rem;
-                                letter-spacing: 0.1em;
-                                line-height: 2;
-                                list-style-type: square;
-                            }
-                        }
-                    }
-                }
-
-                .textbook_content {
-                    ul {
-                        li {
-                            /*余白*/
-                            margin-left: 1rem;
-                            letter-spacing: 0.1em;
-                            line-height: 2;
-                            list-style-type: square;
-                        }
-                    }
+    .textbook {
+        .textbook_content {
+            ul {
+                li {
+                    /*余白*/
+                    margin-left: 1rem;
+                    letter-spacing: 0.1em;
+                    line-height: 2;
+                    list-style-type: square;
                 }
             }
+
         }
     }
 
-    /*セクション別のスタイル*/
-    .about {}
-
-    .history {}
-
-    .charactor {}
-
-    .skill {}
-
-    .goal {}
-
-    .textbook {}
 }
+
 
 @media (min-width:793px) {
 
@@ -989,7 +809,9 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 }
 
 @media (min-width:1095px) {
-
+    html{
+        font-size: 16px;
+    }
     //PC用レイアウト
     .container {
         /*背景*/

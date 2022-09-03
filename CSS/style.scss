@@ -230,7 +230,6 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 @media (min-width:793px) {
 
     //タブレット用レイアウト
-    //PC用レイアウト
     .container {
         /*背景*/
         background-color: $third_color;
@@ -265,30 +264,96 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                 /*レイアウト*/
                 @include devide_child(80%);
                 text-align: center;
+
                 /*余白*/
                 margin: 0 auto 0 0;
 
                 background-color: $second_color;
 
+                /*ハンバーガーメニュー*/
+                .menu-btn {
+                    position: fixed;
+                    top: 5px;
+                    right: 5px;
+                    display: flex;
+                    height: 2rem;
+                    width: 60px;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 90;
+                    background-color: none;
+                }
+
+                .menu-btn span,
+                .menu-btn span:before,
+                .menu-btn span:after {
+                    content: '';
+                    display: block;
+                    height: 3px;
+                    width: 25px;
+                    border-radius: 3px;
+                    background-color: #ffffff;
+                    position: absolute;
+                }
+
+                .menu-btn span:before {
+                    bottom: 8px;
+                }
+
+                .menu-btn span:after {
+                    top: 8px;
+                }
+
+                //ハンバーガーアイコンのCSS
+                #menu-btn-check:checked~.menu-btn span {
+                    background-color: rgba(255, 255, 255, 0);
+                    /*メニューオープン時は真ん中の線を透明にする*/
+                }
+
+                #menu-btn-check:checked~.menu-btn span::before {
+                    bottom: 0;
+                    transform: rotate(45deg);
+                }
+
+                #menu-btn-check:checked~.menu-btn span::after {
+                    top: 0;
+                    transform: rotate(-45deg);
+                }
+
+                #menu-btn-check {
+                    display: none;
+                }
+
+                #menu-btn-check:checked~.header_nav_ul {
+                    //ハンバーガーメニューにチェックがついたときにスタイル付与
+                    display: block;
+                }
+
                 .header_nav_ul {
 
                     /*レイアウト*/
+                    /*leftの値を変更してメニューを画面外へ*/
+                    display: none;
+                    z-index: 80;
                     //display: none;
                     /*余白*/
-                    padding-top: 0.3rem;
+                    margin-top: 5px;
                     /*トランジション*/
                     transition: all 0.3s ease-in;
 
                     /*テキスト*/
                     .header_nav_li {
                         /*レイアウト*/
+                        position: relative;
                         height: 2rem;
+                        /*余白*/
                         a {
                             /*レイアウト*/
                             width: 100%;
                             height: 100%;
-                            display: block;
-                            position: auto;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
                             /*余白*/
                             margin: auto;
                             padding: 0;
@@ -478,7 +543,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
 }
 
-@media (min-width:1091px) {
+@media (min-width:1095px) {
 
     //PC用レイアウト
     .container {
@@ -511,6 +576,14 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                 position: relative;
                 background-color: $second_color;
 
+                #menu-btn-check {
+                    display: none
+                }
+
+                .menu-btn {
+                    display: none
+                }
+
                 .header_nav_ul {
                     /*レイアウト*/
                     @include devide_parent();
@@ -532,17 +605,17 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                             width: 100%;
                             height: 100%;
                             display: block;
-                            position: auto;
+                            position: absolute;
                             /*余白*/
                             margin: auto;
-                            padding: 0;
+                            padding: auto;
                             /*ボーダー*/
                             border-radius: 10px;
                             /*トランジション*/
                             transition: all 0.3s ease-in;
 
-                            /*フォント*/
-                            @include header_nav(1.2rem);
+                            /*テキスト*/
+                            @include header_nav(1.1rem);
 
                             &:hover {
                                 @include nav_link();

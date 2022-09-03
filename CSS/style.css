@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url(mycomponent.scss);
+/*ハンバーガーメニュー*/
 /*基本プロパティ*/
 /*レイアウト*/
 /*ボックスデザイン*/
@@ -23,6 +23,765 @@
 スタイル＋レイアウト***********************
 ***************************************/
 /*ボックスの分割*/
+@media (max-width: 792.9px) {
+  .container .header {
+    /*レイアウト*/
+    position: fixed;
+    z-index: 70;
+    /*ボックスデザイン*/
+    width: 100%;
+    /*背景*/
+    /*余白*/
+  }
+  .container .header .header_title {
+    /*レイアウト*/
+    display: block;
+    text-align: center;
+    /*余白*/
+    margin: 0;
+    padding: 0.3rem;
+    /*ボックスデザイン*/
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    /*フォント*/
+    /*余白*/
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    background-color: #364f6b;
+    color: #ffffff;
+  }
+  .container .header .header_title a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .container .header .header_nav {
+    /*レイアウト*/
+    text-align: center;
+    /*余白*/
+    margin: 0 auto 0 0;
+    background-color: #3fc1c9;
+    /*ハンバーガーメニュー*/
+  }
+  .container .header .header_nav .menu-btn {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 2rem;
+    width: 60px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 90;
+    background-color: none;
+  }
+  .container .header .header_nav .menu-btn span,
+  .container .header .header_nav .menu-btn span:before,
+  .container .header .header_nav .menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+  }
+  .container .header .header_nav .menu-btn span:before {
+    bottom: 8px;
+  }
+  .container .header .header_nav .menu-btn span:after {
+    top: 8px;
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .container .header .header_nav #menu-btn-check {
+    display: none;
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .header_nav_ul {
+    display: block;
+  }
+  .container .header .header_nav .header_nav_ul {
+    /*レイアウト*/
+    display: none;
+    z-index: 80;
+    /*余白*/
+    /*トランジション*/
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    /*テキスト*/
+  }
+  .container .header .header_nav .header_nav_ul .header_nav_li {
+    /*レイアウト*/
+    position: relative;
+    height: 2rem;
+    /*余白*/
+  }
+  .container .header .header_nav .header_nav_ul .header_nav_li a {
+    /*レイアウト*/
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /*余白*/
+    margin: auto;
+    padding: 0;
+    /*ボーダー*/
+    border-radius: 10px;
+    /*トランジション*/
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    /*フォント*/
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    color: #212121;
+    /*装飾*/
+    text-decoration: none;
+  }
+  .container .header .header_nav .header_nav_ul .header_nav_li a:hover {
+    color: #ffffff;
+    background-color: #fc5185;
+  }
+  .container .main {
+    /*余白*/
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 42px;
+    /*フォント*/
+    color: #364f6b;
+  }
+  .container .main .section .section_title {
+    /*レイアウト*/
+    text-align: center;
+    /*テキスト*/
+    /*余白*/
+    margin: 2rem 0rem 1rem 0rem;
+    padding: 0rem;
+    /*ボーダー*/
+    border-bottom: solid 3px #3fc1c9;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 2rem;
+  }
+  .container .main .section .section_content .element_title {
+    /*ボックス*/
+    /*フォント*/
+    /*余白*/
+    margin: 1rem 0rem 0.5rem 0.5rem;
+    padding: 0.5rem;
+    /*ボーダー*/
+    border-left: solid 3px #3fc1c9;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.5rem;
+  }
+  .history .history_table {
+    /*余白*/
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    width: 100%;
+  }
+  .history .history_table th {
+    position: relative;
+    text-align: left;
+    width: 15%;
+  }
+  .history .history_table th:after {
+    display: block;
+    content: "";
+    width: 5px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: -15px;
+  }
+  .history .history_table td {
+    text-align: left;
+    width: 75;
+    padding: 7px 0 7px 30px;
+  }
+  .history .history_table th {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .charactor .charactor_content {
+    /*レイアウト*/
+    /*ボックス*/
+  }
+  .charactor .charactor_content .charactor_element {
+    /*ボックス*/
+    /*余白*/
+    margin: 0.3rem;
+    padding: 0.3rem 0.3rem 1rem 0.3rem;
+    /*ボーダー*/
+    border: solid 3px #BDBDBD;
+    /*背景*/
+    background-color: #364f6b;
+    /*影*/
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    /*フォント*/
+    color: #ffffff;
+  }
+  .charactor .charactor_content .charactor_element .element_content .charactor_vet_title {
+    /*フォント*/
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .charactor .charactor_content .charactor_element .element_content .charactor_vet_content {
+    /*余白*/
+    margin-left: 2rem;
+    padding: 0.1rem;
+    /*フォント*/
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+  .charactor .charactor_content .charactor_element .element_content .charactor_hobby_title {
+    /*フォント*/
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .charactor .charactor_content .charactor_element .element_content .charactor_hobby_content {
+    /*余白*/
+    margin-left: 2rem;
+    padding: 0.1rem;
+    /*フォント*/
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+  .skill {
+    /*レイアウト*/
+    /*ボックス*/
+  }
+  .skill .skill_element {
+    /*レイアウト*/
+    /*ボックス*/
+    /*余白*/
+    margin: 0.3rem;
+    padding: 0.3rem 0.3rem 1rem 0.3rem;
+    /*ボーダー*/
+    border: solid 3px #BDBDBD;
+    /*背景*/
+    background-color: #364f6b;
+    /*影*/
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    /*フォント*/
+    color: #ffffff;
+  }
+  .skill .skill_element .skill_experienced_title {
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .skill .skill_element .skill_experienced_content {
+    /*余白*/
+    margin-left: 2rem;
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+  .skill .skill_element .skill_unexperienced_title {
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .skill .skill_element .skill_unexperienced_content {
+    /*余白*/
+    margin-left: 2rem;
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 792px) {
+  .container {
+    /*背景*/
+    background-color: #f5f5f5;
+  }
+  .container .header {
+    /*レイアウト*/
+    content: "";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    position: fixed;
+    z-index: 70;
+    /*ボックスデザイン*/
+    width: 100%;
+    /*背景*/
+    /*余白*/
+  }
+  .container .header .header_title {
+    /*レイアウト*/
+    display: block;
+    width: 20%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    display: block;
+    text-align: center;
+    /*余白*/
+    margin: 0;
+    padding: 0.3rem;
+    /*ボックスデザイン*/
+    height: -webkit-max-content;
+    height: -moz-max-content;
+    height: max-content;
+    /*フォント*/
+    /*余白*/
+    font-size: 2rem;
+    letter-spacing: 0.1em;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    background-color: #364f6b;
+    color: #ffffff;
+  }
+  .container .header .header_title a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+  .container .header .header_nav {
+    /*レイアウト*/
+    display: block;
+    width: 80%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    text-align: center;
+    /*余白*/
+    margin: 0 auto 0 0;
+    background-color: #3fc1c9;
+    /*ハンバーガーメニュー*/
+  }
+  .container .header .header_nav .menu-btn {
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 2rem;
+    width: 60px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 90;
+    background-color: none;
+  }
+  .container .header .header_nav .menu-btn span,
+  .container .header .header_nav .menu-btn span:before,
+  .container .header .header_nav .menu-btn span:after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 25px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    position: absolute;
+  }
+  .container .header .header_nav .menu-btn span:before {
+    bottom: 8px;
+  }
+  .container .header .header_nav .menu-btn span:after {
+    top: 8px;
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .menu-btn span {
+    background-color: rgba(255, 255, 255, 0);
+    /*メニューオープン時は真ん中の線を透明にする*/
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .menu-btn span::before {
+    bottom: 0;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .menu-btn span::after {
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+  }
+  .container .header .header_nav #menu-btn-check {
+    display: none;
+  }
+  .container .header .header_nav #menu-btn-check:checked ~ .header_nav_ul {
+    display: block;
+  }
+  .container .header .header_nav .header_nav_ul {
+    /*レイアウト*/
+    display: none;
+    z-index: 80;
+    /*余白*/
+    margin-top: 5px;
+    /*トランジション*/
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    /*テキスト*/
+  }
+  .container .header .header_nav .header_nav_ul .header_nav_li {
+    /*レイアウト*/
+    position: relative;
+    height: 2rem;
+    /*余白*/
+  }
+  .container .header .header_nav .header_nav_ul .header_nav_li a {
+    /*レイアウト*/
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /*余白*/
+    margin: auto;
+    padding: 0;
+    /*ボーダー*/
+    border-radius: 10px;
+    /*トランジション*/
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    /*フォント*/
+    letter-spacing: 0.1em;
+    font-size: 1rem;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    color: #212121;
+    /*装飾*/
+    text-decoration: none;
+  }
+  .container .header .header_nav .header_nav_ul .header_nav_li a:hover {
+    color: #ffffff;
+    background-color: #fc5185;
+  }
+  .container .main {
+    /*余白*/
+    margin-left: 5px;
+    margin-right: 5px;
+    padding-top: 42px;
+    /*フォント*/
+    color: #364f6b;
+  }
+  .container .main .section {
+    /*レイアウト*/
+    /*ボックス*/
+  }
+  .container .main .section .section_title {
+    /*余白*/
+    margin: 2rem 0rem 1rem 0rem;
+    padding: 0rem;
+    /*ボーダー*/
+    border-bottom: solid 3px #3fc1c9;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 2rem;
+  }
+  .container .main .section .section_content .element_title {
+    /*ボックス*/
+    /*フォント*/
+    /*余白*/
+    margin: 1rem 0rem 0.5rem 0.5rem;
+    padding: 0.5rem;
+    /*ボーダー*/
+    border-left: solid 3px #3fc1c9;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.5rem;
+  }
+  .container .main .section .section_content .history_table {
+    /*余白*/
+    margin-left: 2rem;
+    width: 100%;
+  }
+  .container .main .section .section_content .history_table th {
+    position: relative;
+    text-align: left;
+    width: 15%;
+  }
+  .container .main .section .section_content .history_table th:after {
+    display: block;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    position: absolute;
+    top: calc(50% - 1px);
+    right: -15px;
+  }
+  .container .main .section .section_content .history_table td {
+    text-align: left;
+    width: 75;
+    padding: 7px 0 7px 30px;
+  }
+  .container .main .section .charactor_content {
+    /*レイアウト*/
+    content: "";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /*ボックス*/
+  }
+  .container .main .section .charactor_content .charactor_element {
+    display: block;
+    width: 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /*ボックス*/
+    /*余白*/
+    margin: 0.3rem;
+    padding: 0.3rem 0.3rem 1rem 0.3rem;
+    /*ボーダー*/
+    border: solid 3px #BDBDBD;
+    /*背景*/
+    background-color: #364f6b;
+    /*影*/
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    /*フォント*/
+    color: #ffffff;
+  }
+  .container .main .section .charactor_content .charactor_element .element_content .charactor_vet_title {
+    /*フォント*/
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .container .main .section .charactor_content .charactor_element .element_content .charactor_vet_content {
+    /*余白*/
+    margin-left: 2rem;
+    padding: 0.1rem;
+    /*フォント*/
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+  .container .main .section .charactor_content .charactor_element .element_content .charactor_hobby_title {
+    /*フォント*/
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .container .main .section .charactor_content .charactor_element .element_content .charactor_hobby_content {
+    /*余白*/
+    margin-left: 2rem;
+    padding: 0.1rem;
+    /*フォント*/
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+  .container .main .section .skill_content {
+    /*レイアウト*/
+    content: "";
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /*ボックス*/
+  }
+  .container .main .section .skill_content .skill_element {
+    /*レイアウト*/
+    display: block;
+    width: 50%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /*ボックス*/
+    /*余白*/
+    margin: 0.3rem;
+    padding: 0.3rem 0.3rem 1rem 0.3rem;
+    /*ボーダー*/
+    border: solid 3px #BDBDBD;
+    /*背景*/
+    background-color: #364f6b;
+    /*影*/
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    /*フォント*/
+    color: #ffffff;
+  }
+  .container .main .section .skill_content .skill_element .skill_experienced_title {
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .container .main .section .skill_content .skill_element .skill_experienced_content {
+    /*余白*/
+    margin-left: 2rem;
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+  .container .main .section .skill_content .skill_element .skill_unexperienced_title {
+    /*余白*/
+    margin: 1rem 1rem 0rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+    /*ボーダー*/
+    border-top: dotted 2px #BDBDBD;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1.3rem;
+    font: bold;
+    color: #3fc1c9;
+  }
+  .container .main .section .skill_content .skill_element .skill_unexperienced_content {
+    /*余白*/
+    margin-left: 2rem;
+    /*余白*/
+    padding: 0.2rem;
+    letter-spacing: 0.05em;
+    line-height: 1.5;
+    /*フォント*/
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Mayryo", sans-serif;
+    font-size: 1rem;
+  }
+  .container .main .section .goal_content {
+    /*レイアウト*/
+  }
+  .container .main .section .goal_content .goal_element {
+    /*レイアウト*/
+    /*ボックス*/
+    /*余白*/
+    margin: 0.3rem;
+    padding: 0.3rem 0.3rem 1rem 0.3rem;
+    /*ボーダー*/
+    border: solid 3px #BDBDBD;
+    /*背景*/
+    background-color: #364f6b;
+    /*影*/
+    -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    /*テキスト*/
+    color: #ffffff;
+  }
+  .container .main .section .goal_content .goal_element ul li {
+    /*余白*/
+    margin-left: 1rem;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    list-style-type: square;
+  }
+  .container .main .section .textbook_content ul li {
+    /*余白*/
+    margin-left: 1rem;
+    letter-spacing: 0.1em;
+    line-height: 2;
+    list-style-type: square;
+  }
+  /*セクション別のスタイル*/
+}
+
 @media (min-width: 793px) {
   .container {
     /*背景*/
@@ -38,6 +797,7 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    top: 0;
     /*ボックスデザイン*/
     width: 100%;
     /*背景*/
@@ -222,7 +982,8 @@
   }
   .container .main .section .section_content .history_table {
     /*余白*/
-    margin-left: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     width: 100%;
   }
   .container .main .section .section_content .history_table th {
@@ -605,7 +1366,7 @@
   }
   .container .main .section .section_content .history_table {
     /*余白*/
-    margin-left: 1rem;
+    margin-left: 2rem;
     width: 100%;
   }
   .container .main .section .section_content .history_table th {

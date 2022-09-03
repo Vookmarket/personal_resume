@@ -1,4 +1,4 @@
-@import url(mycomponent.scss);
+@import "mycomponent.scss";
 
 /*基本プロパティ*/
 /*レイアウト*/
@@ -183,7 +183,37 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
     }
 }
 
-@mixin table2 {}
+@mixin table2 {
+    width: 100%;
+
+    th {
+        position: relative;
+        text-align: left;
+        width: 15%;
+
+        &:after {
+            display: block;
+            content: "";
+            width: 5px;
+            height: 2px;
+            background-color: #333;
+            position: absolute;
+            top: calc(50% - 1px);
+            right: -15px;
+
+        }
+
+    }
+
+    td {
+        text-align: left;
+
+        width: 75;
+        padding: 7px 0 7px 30px;
+
+    }
+
+}
 
 /***********画像***********/
 @mixin image1 {}
@@ -227,6 +257,475 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
 }
 
+@media(max-width:792.9px) {
+    .container {
+        .header {
+            //ヘッダー
+            /*レイアウト*/
+            position: fixed;
+            z-index: 70;
+            /*ボックスデザイン*/
+            width: 100%;
+
+            /*背景*/
+            /*余白*/
+            //ヘッダータイトル
+
+            .header_title {
+                /*レイアウト*/
+                display: block;
+                text-align: center;
+                /*余白*/
+                margin: 0;
+                padding: 0.3rem;
+                /*ボックスデザイン*/
+                height: max-content;
+                /*フォント*/
+                @include header_title(2rem);
+
+            }
+
+            .header_nav {
+                /*レイアウト*/
+                text-align: center;
+
+                /*余白*/
+                margin: 0 auto 0 0;
+
+                background-color: $second_color;
+
+                /*ハンバーガーメニュー*/
+                @include hamburger();
+
+                .header_nav_ul {
+                    /*レイアウト*/
+                    display: none;
+                    z-index: 80;
+                    //display: none;
+                    /*余白*/
+                    /*トランジション*/
+                    transition: all 0.3s ease-in;
+
+                    /*テキスト*/
+                    .header_nav_li {
+                        /*レイアウト*/
+                        position: relative;
+                        height: 2rem;
+
+                        /*余白*/
+                        a {
+                            /*レイアウト*/
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            /*余白*/
+                            margin: auto;
+                            padding: 0;
+                            /*ボーダー*/
+                            border-radius: 10px;
+                            /*トランジション*/
+                            transition: all 0.3s ease-in;
+
+                            /*フォント*/
+                            @include header_nav(1rem);
+
+                            &:hover {
+                                @include nav_link();
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        .main {
+            /*余白*/
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 42px;
+            /*フォント*/
+            color: $first_color;
+
+            .section {
+                .section_title {
+                    /*レイアウト*/
+                    text-align: center;
+                    /*テキスト*/
+                    @include headline_big()
+                }
+
+                .section_content {
+                    .element_title {
+                        /*ボックス*/
+                        /*フォント*/
+                        @include headline_medium();
+                    }
+
+                }
+            }
+        }
+    }
+
+    .history {
+        .history_table {
+            /*余白*/
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            @include table2();
+
+            th {
+                justify-content: center;
+            }
+        }
+
+    }
+
+    .charactor {
+        .charactor_content {
+            /*レイアウト*/
+
+            /*ボックス*/
+            .charactor_element {
+                /*ボックス*/
+                @include box1();
+                /*フォント*/
+                color: $txt_ico;
+
+                .element_content {
+
+                    .charactor_vet_title {
+                        /*フォント*/
+                        @include headline_small();
+                    }
+
+                    .charactor_vet_content {
+                        /*余白*/
+                        margin-left: 2rem;
+                        padding: 0.1rem;
+                        /*フォント*/
+                        @include paragraph();
+                    }
+
+                    .charactor_hobby_title {
+                        /*フォント*/
+                        @include headline_small();
+                    }
+
+                    .charactor_hobby_content {
+                        /*余白*/
+                        margin-left: 2rem;
+
+                        padding: 0.1rem;
+                        /*フォント*/
+                        @include paragraph();
+                    }
+
+                }
+            }
+        }
+    }
+
+    .skill {
+        /*レイアウト*/
+
+        /*ボックス*/
+        .skill_element {
+            /*レイアウト*/
+            /*ボックス*/
+            @include box1;
+            /*フォント*/
+            color: $txt_ico;
+
+            .skill_experienced_title {
+                @include headline_small();
+            }
+
+            .skill_experienced_content {
+                /*余白*/
+                margin-left: 2rem;
+                @include paragraph();
+
+            }
+
+            .skill_unexperienced_title {
+                @include headline_small();
+            }
+
+            .skill_unexperienced_content {
+                /*余白*/
+                margin-left: 2rem;
+                @include paragraph();
+
+            }
+        }
+    }
+
+    .goal {}
+
+    .textbook {}
+
+}
+
+@media (min-width:792px) {
+
+    //共通のスタイル
+    .container {
+        /*背景*/
+        background-color: $third_color;
+
+        .header {
+            //ヘッダー
+            /*レイアウト*/
+            @include devide_parent();
+            position: fixed;
+            z-index: 70;
+            /*ボックスデザイン*/
+            width: 100%;
+
+            /*背景*/
+            /*余白*/
+            //ヘッダータイトル
+
+            .header_title {
+                /*レイアウト*/
+                @include devide_child(20%);
+                display: block;
+                text-align: center;
+                /*余白*/
+                margin: 0;
+                padding: 0.3rem;
+                /*ボックスデザイン*/
+                height: max-content;
+                /*フォント*/
+                @include header_title(2rem);
+
+            }
+
+            .header_nav {
+                /*レイアウト*/
+                @include devide_child(80%);
+                text-align: center;
+
+                /*余白*/
+                margin: 0 auto 0 0;
+
+                background-color: $second_color;
+
+                /*ハンバーガーメニュー*/
+                @include hamburger();
+
+                .header_nav_ul {
+                    /*レイアウト*/
+                    display: none;
+                    z-index: 80;
+                    //display: none;
+                    /*余白*/
+                    margin-top: 5px;
+                    /*トランジション*/
+                    transition: all 0.3s ease-in;
+
+                    /*テキスト*/
+                    .header_nav_li {
+                        /*レイアウト*/
+                        position: relative;
+                        height: 2rem;
+
+                        /*余白*/
+                        a {
+                            /*レイアウト*/
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            /*余白*/
+                            margin: auto;
+                            padding: 0;
+                            /*ボーダー*/
+                            border-radius: 10px;
+                            /*トランジション*/
+                            transition: all 0.3s ease-in;
+
+                            /*フォント*/
+                            @include header_nav(1rem);
+
+                            &:hover {
+                                @include nav_link();
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+
+        .main {
+            /*余白*/
+            margin-left: 5px;
+            margin-right: 5px;
+            padding-top: 42px;
+            /*フォント*/
+            color: $first_color;
+
+            .section {
+
+                /*レイアウト*/
+                /*ボックス*/
+                .section_title {
+                    @include headline_big()
+                }
+
+                .section_content {
+                    .element_title {
+                        /*ボックス*/
+                        /*フォント*/
+                        @include headline_medium();
+                    }
+
+                    .history_table {
+                        /*余白*/
+                        margin-left: 2rem;
+                        @include table1();
+                    }
+                }
+
+                .charactor_content {
+                    /*レイアウト*/
+                    @include devide_parent();
+
+                    /*ボックス*/
+                    .charactor_element {
+                        @include devide_child(50%);
+                        /*ボックス*/
+                        @include box1();
+                        /*フォント*/
+                        color: $txt_ico;
+
+                        .element_content {
+
+                            .charactor_vet_title {
+                                /*フォント*/
+                                @include headline_small();
+                            }
+
+                            .charactor_vet_content {
+                                /*余白*/
+                                margin-left: 2rem;
+                                padding: 0.1rem;
+                                /*フォント*/
+                                @include paragraph();
+                            }
+
+                            .charactor_hobby_title {
+                                /*フォント*/
+                                @include headline_small();
+                            }
+
+                            .charactor_hobby_content {
+                                /*余白*/
+                                margin-left: 2rem;
+
+                                padding: 0.1rem;
+                                /*フォント*/
+                                @include paragraph();
+                            }
+
+                        }
+                    }
+                }
+
+                .skill_content {
+                    /*レイアウト*/
+                    @include devide_parent();
+
+                    /*ボックス*/
+                    .skill_element {
+                        /*レイアウト*/
+                        @include devide_child(50%);
+                        /*ボックス*/
+                        @include box1;
+                        /*フォント*/
+                        color: $txt_ico;
+
+                        .skill_experienced_title {
+                            @include headline_small();
+                        }
+
+                        .skill_experienced_content {
+                            /*余白*/
+                            margin-left: 2rem;
+                            @include paragraph();
+
+                        }
+
+                        .skill_unexperienced_title {
+                            @include headline_small();
+                        }
+
+                        .skill_unexperienced_content {
+                            /*余白*/
+                            margin-left: 2rem;
+                            @include paragraph();
+
+                        }
+                    }
+                }
+
+                .goal_content {
+                    /*レイアウト*/
+
+                    .goal_element {
+                        /*レイアウト*/
+                        /*ボックス*/
+                        @include box1;
+                        /*テキスト*/
+                        color: $txt_ico;
+
+                        ul {
+                            li {
+                                /*余白*/
+                                margin-left: 1rem;
+                                letter-spacing: 0.1em;
+                                line-height: 2;
+                                list-style-type: square;
+                            }
+                        }
+                    }
+                }
+
+                .textbook_content {
+                    ul {
+                        li {
+                            /*余白*/
+                            margin-left: 1rem;
+                            letter-spacing: 0.1em;
+                            line-height: 2;
+                            list-style-type: square;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    /*セクション別のスタイル*/
+    .about {}
+
+    .history {}
+
+    .charactor {}
+
+    .skill {}
+
+    .goal {}
+
+    .textbook {}
+}
+
 @media (min-width:793px) {
 
     //タブレット用レイアウト
@@ -239,6 +738,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
             //ヘッダー
             /*レイアウト*/
             @include devide_parent();
+            top: 0;
             /*ボックスデザイン*/
             width: 100%;
 
@@ -271,66 +771,9 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                 background-color: $second_color;
 
                 /*ハンバーガーメニュー*/
-                .menu-btn {
-                    position: fixed;
-                    top: 5px;
-                    right: 5px;
-                    display: flex;
-                    height: 2rem;
-                    width: 60px;
-                    justify-content: center;
-                    align-items: center;
-                    z-index: 90;
-                    background-color: none;
-                }
-
-                .menu-btn span,
-                .menu-btn span:before,
-                .menu-btn span:after {
-                    content: '';
-                    display: block;
-                    height: 3px;
-                    width: 25px;
-                    border-radius: 3px;
-                    background-color: #ffffff;
-                    position: absolute;
-                }
-
-                .menu-btn span:before {
-                    bottom: 8px;
-                }
-
-                .menu-btn span:after {
-                    top: 8px;
-                }
-
-                //ハンバーガーアイコンのCSS
-                #menu-btn-check:checked~.menu-btn span {
-                    background-color: rgba(255, 255, 255, 0);
-                    /*メニューオープン時は真ん中の線を透明にする*/
-                }
-
-                #menu-btn-check:checked~.menu-btn span::before {
-                    bottom: 0;
-                    transform: rotate(45deg);
-                }
-
-                #menu-btn-check:checked~.menu-btn span::after {
-                    top: 0;
-                    transform: rotate(-45deg);
-                }
-
-                #menu-btn-check {
-                    display: none;
-                }
-
-                #menu-btn-check:checked~.header_nav_ul {
-                    //ハンバーガーメニューにチェックがついたときにスタイル付与
-                    display: block;
-                }
+                @include hamburger();
 
                 .header_nav_ul {
-
                     /*レイアウト*/
                     /*leftの値を変更してメニューを画面外へ*/
                     display: none;
@@ -346,6 +789,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
                         /*レイアウト*/
                         position: relative;
                         height: 2rem;
+
                         /*余白*/
                         a {
                             /*レイアウト*/
@@ -398,7 +842,8 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
                     .history_table {
                         /*余白*/
-                        margin-left: 1rem;
+                        padding-left: 1rem;
+                        padding-right: 1rem;
                         @include table1();
                     }
                 }
@@ -650,7 +1095,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
                     .history_table {
                         /*余白*/
-                        margin-left: 1rem;
+                        margin-left: 2rem;
                         @include table1();
                     }
                 }

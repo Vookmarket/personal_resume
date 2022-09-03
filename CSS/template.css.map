@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": ";AAAA,kBAAkB;AAgClB,wBAAwB;AAExB,0BAA0B",
+    "sources": [
+        "../CSS/template.scss"
+    ],
+    "names": [],
+    "file": "template.css"
+}

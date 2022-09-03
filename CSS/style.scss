@@ -160,6 +160,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
         position: relative;
         text-align: left;
         width: 15%;
+        text-align: center;
 
         &:after {
             display: block;
@@ -189,7 +190,7 @@ $font1: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "
 
     th {
         position: relative;
-        text-align: left;
+        text-align: center;
         width: 15%;
 
         &:after {

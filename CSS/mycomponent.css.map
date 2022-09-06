@@ -1,9 +1,1 @@
-{
-    "version": 3,
-    "mappings": ";AAAA,wBAAwB",
-    "sources": [
-        "../CSS/mycomponent.scss"
-    ],
-    "names": [],
-    "file": "mycomponent.css"
-}
+{"version":3,"sources":["mycomponent.css","../CSS/mycomponent.scss"],"names":[],"mappings":"AAAA,gBAAgB;ACAhB,aAAA","file":"mycomponent.css"}
